@@ -8,7 +8,7 @@ import { Treding } from '../sections/treding/Treding'
 export const Main = (props) => {
     return (
         <main className={S.main}>
-            <Search />
+            <Search/>
             <Favorites/>
             <ListenedAlbuns/>
             <Treding/>

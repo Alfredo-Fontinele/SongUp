@@ -6,11 +6,11 @@ import { FaPlay, FaPause } from 'react-icons/fa'
 
 export const Playlist = () => {
     return (
-        <aside className={S.playlist}>
-            <div className={S.btn__close}>
-                <IoMdClose/>
-            </div>
+        <aside className={S.playlist} id="playlist">
             <div className={S.playlist__container}>
+                <div className={S.btn__close}>
+                    <IoMdClose/>
+                </div>
                 <h4>Next Playlist</h4>
                 <ul className={S.cards__playlist}>
                     <li className={S.card__music}>
