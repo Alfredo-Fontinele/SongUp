@@ -1,3 +1,30 @@
+
+/* Animacoes */
+
+@keyframes open__playlist {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+@keyframes close__playlist {
+    0% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+}
+
+/* Playlist */
+
 .playlist {
     display: flex;
     flex-direction: column;
@@ -7,7 +34,7 @@
     gap: 20px;
     max-width: 270px;
     min-height: 100vh;
-    padding: 2rem 1rem;
+    padding: 1rem;
     background-color: rgb(20,30,40);
 }
 
@@ -40,8 +67,6 @@
     font-size: 15px;
     font-weight: 500;
     color: rgb(106, 96, 250);
-    /* color: crimson; */
-    /* color: mediumspringgreen; */
 }
 
 .cards__playlist {
@@ -52,7 +77,6 @@
     gap: 40px;
     height: 40vh;
     overflow-y: auto;
-    /* background-color: aqua; */
 }
 
 .cards__playlist::-webkit-scrollbar {
@@ -71,7 +95,6 @@
     height: 50px;
     padding-right: 10px;
     width: 100%;
-    /* background-color: rgb(10,80,50); */
 }
 
 .cards__playlist .card__music .card__left {
@@ -120,11 +143,8 @@
     border-radius: 10px;
     color: #fff;
     cursor: pointer;
-    /* padding: 8px; */
     transition: all 0.5s ease-in-out;
 }
-
-/* Secao Musica */
 
 .music__now {
     background-image: url("https://i.scdn.co/image/ab67616d0000b273f4386b4b6a4d3b807f97021d");
@@ -174,12 +194,10 @@
 }
 
 .music__now .card__music__now .music__controls {
-    /* background-color: aqua; */
     height: 100%;
 }
 
 .music__now .card__music__now .music__controls svg {
-    /* font-size: 25px; */
     width: 35px;
     height: 35px;
     cursor: pointer;
