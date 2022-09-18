@@ -1,13 +1,14 @@
-import { API__MUSIC } from "./API"
+
+import { Container } from "./components/container/Container"
 import { Options } from "./components/layout/options/Options"
+import { Playlist } from "./components/layout/playlist/Playlist"
 
 function App() {
   return (
-    <div>
-      {/* <button onClick={API__MUSIC.reqAPI}>Mostrar Musicas</button> */}
+    <Container>
       <Options />
-      {/* <div className="lista"></div> */}
-    </div>
+      <Playlist/>
+    </Container>
   )
 }
 

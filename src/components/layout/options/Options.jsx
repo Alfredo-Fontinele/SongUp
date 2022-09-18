@@ -16,7 +16,7 @@ export const Options = () => {
                 <FaDownload/>
                 <GiHamburgerMenu/>
             </div>
-            <div className={S.logout}>
+            <div className={S.logout} title="Sair">
                 <BiLogOut/>
             </div>
         </aside>

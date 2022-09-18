@@ -1,0 +1,187 @@
+.playlist {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+    max-width: 270px;
+    min-height: 100vh;
+    padding: 2rem 1rem;
+    background-color: rgb(20,30,40);
+}
+
+.btn__close {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+.btn__close svg {
+    width: 25px;
+    height: 25px;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    /* padding: 8px; */
+    transition: all 0.5s ease-in-out;
+}
+
+.playlist__container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+.playlist__container h4 {
+    font-size: 15px;
+    font-weight: 500;
+    color: rgb(106, 96, 250);
+    /* color: crimson; */
+    /* color: mediumspringgreen; */
+}
+
+.cards__playlist {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 40px;
+    height: 40vh;
+    overflow-y: auto;
+    /* background-color: aqua; */
+}
+
+.cards__playlist::-webkit-scrollbar {
+    background-color: transparent;
+    width: 5px;
+}
+
+.cards__playlist::-webkit-scrollbar-thumb {
+    background-color: mediumspringgreen;
+}
+
+.cards__playlist .card__music {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    padding-right: 10px;
+    width: 100%;
+    /* background-color: rgb(10,80,50); */
+}
+
+.cards__playlist .card__music .card__left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    height: inherit;
+}
+
+.cards__playlist .card__music .card__left .card__img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cards__playlist .card__music .card__left .card__img img {
+    object-fit: cover;
+    border-radius: 5px;
+    width: 50px;
+    height: 50px;
+}
+
+.cards__playlist .card__music .card__left .card__description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.cards__playlist .card__music .card__left .card__description h3 {
+    font-weight: 400;
+    font-size: 12px;
+    color: #fff;
+}
+
+.cards__playlist .card__music .card__left .card__description p {
+    font-size: 10px;
+    color: #fff;
+}
+
+.cards__playlist .card__music .card__right svg {
+    width: 18px;
+    height: 18px;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    /* padding: 8px; */
+    transition: all 0.5s ease-in-out;
+}
+
+/* Secao Musica */
+
+.music__now {
+    background-image: url("https://i.scdn.co/image/ab67616d0000b273f4386b4b6a4d3b807f97021d");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    max-height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 10px;
+}
+
+.music__now .card__music__now {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: rgba(20,30,40,0.9);
+}
+
+.music__now .card__music__now .music__description {
+    /* background-color: aqua; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    gap: 5px;
+}
+
+.music__now .card__music__now .music__description h3 {
+    color: #fff;
+    font-weight: 500;
+    font-size: 13px;
+}
+
+.music__now .card__music__now .music__description p {
+    color: #fff;
+    font-size: 10px;
+}
+
+.music__now .card__music__now .music__controls {
+    /* background-color: aqua; */
+    height: 100%;
+}
+
+.music__now .card__music__now .music__controls svg {
+    /* font-size: 25px; */
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    color: #fff;
+}
