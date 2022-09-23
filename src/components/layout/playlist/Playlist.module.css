@@ -26,6 +26,9 @@
 /* Playlist */
 
 .playlist {
+    position: absolute;
+    right: 0;
+    transition: all 1s;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

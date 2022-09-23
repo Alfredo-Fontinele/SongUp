@@ -1,33 +1,34 @@
 export const API__MUSIC = {
     
+    searchValue: "",
     baseURL: "https://deezerdevs-deezer.p.rapidapi.com/search",
 
-    async reqAPI () {
-        const lista = document.querySelector(".lista")
+    async reqAPI (search) {
         const json = await axios.get(API__MUSIC.baseURL, {
-                params: { q: "eminem" },
+                params: { q: search },
                 headers: {
                     'X-RapidAPI-Key': 'b6747fe123msha76405e66d5b042p1d8809jsnee1a35cfb206',
                     'X-RapidAPI-Host': 'deezerdevs-deezer.p.rapidapi.com'
                 }
             })
-        const { data: { data } } = json
-        data.forEach(info => {
-          const { 
-            title_short, 
-            duration, 
-            artist: { 
-              name, 
-              picture_small
-            } 
-          } = info
-          const card = API__MUSIC.createCard(picture_small, title_short, name, duration)
-          console.log(info)
-          // const audio = document.createElement("audio")
-          // audio.controls = true
-          // audio.src = info.preview
-          lista.append(card)
-        })
+        const { data: { data: listMusic } } = json
+        return listMusic
+        // data.forEach(info => {
+        //   const { 
+        //     title_short, 
+        //     duration, 
+        //     artist: { 
+        //       name, 
+        //       picture_small
+        //     } 
+        //   } = info
+        //   const card = API__MUSIC.createCard(picture_small, title_short, name, duration)
+        //   // console.log(info)
+        // })
+    },
+
+    setSearchValue(newValue) {
+        this.searchValue = newValue
     },
     
     createCard(picture_small, title_short, name, duration) {

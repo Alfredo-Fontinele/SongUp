@@ -2,14 +2,16 @@ import * as S from './Playlist.module.css'
 import { IoMdClose } from 'react-icons/io'
 import { BiPlay, BiSkipNext, BiSkipPrevious } from 'react-icons/bi'
 import { BsThreeDotsVertical } from 'react-icons/bs'
-import { FaPlay, FaPause } from 'react-icons/fa'
 
-export const Playlist = () => {
+export const Playlist = ({ setStatusPlaylist }) => {
+    const closePlaylist = () => {
+        setStatusPlaylist((value) => !value)
+    }
     return (
-        <aside className={S.playlist} id="playlist">
+        <aside className={S.playlist}>
             <div className={S.playlist__container}>
                 <div className={S.btn__close}>
-                    <IoMdClose/>
+                    <IoMdClose onClick={closePlaylist}/>
                 </div>
                 <h4>Next Playlist</h4>
                 <ul className={S.cards__playlist}>

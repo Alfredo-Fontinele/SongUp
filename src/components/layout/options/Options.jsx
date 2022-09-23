@@ -4,7 +4,10 @@ import { BiLogOut } from 'react-icons/bi'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { FaHome, FaSearch, FaHeart, FaMicrophone, FaDownload } from "react-icons/fa"
 
-export const Options = () => {
+export const Options = ({ setLogged }) => {
+    const toogleLogged = () => {
+        setLogged((value) => !value)
+    }
     return (
         <aside className={S.options}>
             <div className={S.comands}>
@@ -17,7 +20,7 @@ export const Options = () => {
                 <GiHamburgerMenu/>
             </div>
             <div className={S.logout} title="Sair">
-                <BiLogOut/>
+                <BiLogOut onClick={toogleLogged}/>
             </div>
         </aside>
     )

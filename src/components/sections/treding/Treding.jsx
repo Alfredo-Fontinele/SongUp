@@ -1,5 +1,7 @@
 export const Treding = () => {
     return (
-        <div></div>
+        <div>
+            <h3>Trending Right Now</h3>
+        </div>
     )
 }
