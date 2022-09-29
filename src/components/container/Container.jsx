@@ -1,9 +1,7 @@
-import * as S from './Container.module.css'
+import * as S from './style'
 
-export const Container = (props) => {
+export const Container = ({ children }) => {
     return (
-        <div className={S.container}>
-            {props.children}
-        </div>
+        <S.Container>{ children }</S.Container>
     )
 }

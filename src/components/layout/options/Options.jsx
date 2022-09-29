@@ -1,4 +1,4 @@
-import * as S from "./Options.module.css"
+import * as S from "./style"
 import { BsFillArrowUpRightSquareFill } from 'react-icons/bs'
 import { BiLogOut } from 'react-icons/bi'
 import { GiHamburgerMenu } from 'react-icons/gi'
@@ -9,8 +9,8 @@ export const Options = ({ setLogged }) => {
         setLogged((value) => !value)
     }
     return (
-        <aside className={S.options}>
-            <div className={S.comands}>
+        <S.Options>
+            <S.Comands>
                 <FaHome/>
                 <FaSearch/>
                 <FaHeart/>
@@ -18,10 +18,10 @@ export const Options = ({ setLogged }) => {
                 <BsFillArrowUpRightSquareFill/>
                 <FaDownload/>
                 <GiHamburgerMenu/>
-            </div>
-            <div className={S.logout} title="Sair">
+            </S.Comands>
+            <S.Logout title="Sair">
                 <BiLogOut onClick={toogleLogged}/>
-            </div>
-        </aside>
+            </S.Logout>
+        </S.Options>
     )
 }

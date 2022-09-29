@@ -3,7 +3,7 @@ import { createGlobalStyle } from 'styled-components'
 export const GlobalStyle = createGlobalStyle`
 
     :root {
-        --primary: mediumslateblue;
+        --primary: rgb(127, 146, 255);
     }
 
     * {
@@ -11,10 +11,10 @@ export const GlobalStyle = createGlobalStyle`
         margin: 0;
         padding: 0;
         outline: 0;
-        /* border: 2px solid springgreen; */
+        border: 0;
         text-decoration: none;
         list-style: none;
-        font-family: 'Roboto', sans-serif;
+        font-family: 'Poppins', sans-serif;
     }
 
     body {

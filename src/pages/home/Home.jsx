@@ -1,17 +1,15 @@
+import * as S from './style'
+
 export const Home = ({ setLogged }) => {
     const toogleLogged = () => {
         setLogged((value) => !value)
     }
     return (
-        <>
-            <h1>Home</h1>
-            <button 
-                style={{
-                    padding:"10px", backgroundColor:"#111", color: "#fff"
-                }} 
-                onClick={toogleLogged}>
-                Ir para Dashboard
-            </button>
-        </>
+        <S.Home>
+            <S.HomeDescription>
+                <S.HomeTitle>SongUp</S.HomeTitle>
+                <S.BtnHome onClick={toogleLogged}>Go Music</S.BtnHome>
+            </S.HomeDescription>
+        </S.Home>
     )
 }

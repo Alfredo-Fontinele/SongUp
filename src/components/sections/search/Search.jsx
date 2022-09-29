@@ -1,4 +1,4 @@
-import * as S from './Search.module.css'
+import * as S from './style'
 import { FaSearch, FaBell, FaAngleDown } from 'react-icons/fa'
 import { TbPlaylist } from 'react-icons/tb'
 import { GiHamburgerMenu } from 'react-icons/gi'
@@ -19,8 +19,8 @@ export const Search = ({ setStatusPlaylist, setListenedAlbuns }) => {
     }
 
     return (
-        <section className={S.search}>
-            <div className={S.camp__search} >
+        <S.Search>
+            <S.Camp__Search>
                 <FaSearch onClick={pesquisar}/>
                 <input 
                     type="search" 
@@ -28,17 +28,17 @@ export const Search = ({ setStatusPlaylist, setListenedAlbuns }) => {
                     placeholder='Search for song, artist, lyrics...' 
                     onChange={(e) => setValueSearch(e.target.value)}
                 />
-            </div>
-            <div className={S.profile}>
+            </S.Camp__Search>
+            <S.Profile>
                 <FaBell/>
                 <img src="https://toppng.com/uploads/preview/instagram-default-profile-picture-11562973083brycehrmyv.png" alt="profile" />
                 <span>Alex Galileu Galilei</span>
                 <FaAngleDown/>
-                <TbPlaylist className={S.btn__playlist} onClick={tooglePlaylist}/>
-            </div>
-            <div className={S.menu__mobile}>
+                <TbPlaylist className="btn__playlist" onClick={tooglePlaylist}/>
+            </S.Profile>
+            <S.Menu__Mobile>
                 <GiHamburgerMenu/>
-            </div>
-        </section>
+            </S.Menu__Mobile>
+        </S.Search>
     )
 }
