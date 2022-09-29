@@ -1,26 +1,27 @@
 import * as S from './Search.module.css'
 import { FaSearch, FaBell, FaAngleDown } from 'react-icons/fa'
 import { TbPlaylist } from 'react-icons/tb'
-import { API__MUSIC } from '../../../API'
+import { GiHamburgerMenu } from 'react-icons/gi'
 import { useState } from 'react'
+import { API } from '../../../services/Api'
 
-export const Search = ({ setStatusPlaylist }) => {
+export const Search = ({ setStatusPlaylist, setListenedAlbuns }) => {
+    const [valueSearch, setValueSearch] = useState("")
 
-    const [valueSearch, setValueSearch] = useState()
-
-    const searchValue = async () => {
-        API__MUSIC.setSearchValue(valueSearch)
-        const result = await API__MUSIC.reqAPI(valueSearch)
+    const pesquisar = async () => {
+        const listenedNew = await API.resDataBySearch(valueSearch)
+        setListenedAlbuns(listenedNew)
         setValueSearch("")
-        // console.log(result)
-    }
+    }   
+
     const tooglePlaylist = () => {
         setStatusPlaylist((value) => !value)
     }
+
     return (
         <section className={S.search}>
-            <div className={S.camp__search}>
-                <FaSearch onClick={searchValue}/>
+            <div className={S.camp__search} >
+                <FaSearch onClick={pesquisar}/>
                 <input 
                     type="search" 
                     value={valueSearch}
@@ -34,6 +35,9 @@ export const Search = ({ setStatusPlaylist }) => {
                 <span>Alex Galileu Galilei</span>
                 <FaAngleDown/>
                 <TbPlaylist className={S.btn__playlist} onClick={tooglePlaylist}/>
+            </div>
+            <div className={S.menu__mobile}>
+                <GiHamburgerMenu/>
             </div>
         </section>
     )

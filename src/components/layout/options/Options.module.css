@@ -46,3 +46,11 @@
 .options .logout svg:hover { 
     box-shadow: 1px 1px 30px crimson;
 }
+
+@media only screen and (max-width: 1300px) {
+
+    .options {
+        display: none;
+    }
+
+}

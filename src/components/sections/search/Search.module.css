@@ -2,8 +2,9 @@
     /* background-color: aqua; */
     display: flex;
     align-items: center;
+    justify-content: space-between;
     height: 40px;
-    gap: 50px;
+    gap: 30px;
 }
 
 .search .camp__search {
@@ -74,4 +75,26 @@
     font-size: 30px;
     cursor: pointer;
     color: mediumslateblue;
+}
+
+.search .menu__mobile {
+    display: none;
+    justify-content: flex-end;
+}
+
+.search .menu__mobile svg {
+    font-size: 35px;
+    color: mediumslateblue;
+}
+
+@media only screen and (max-width: 1300px) {
+
+    .search .profile {
+        display: none;
+    }
+
+    .search .menu__mobile {
+        display: flex;
+    }
+
 }

@@ -1,18 +1,18 @@
 import { useState } from 'react'
 import { Dashboard } from './pages/dashboard/Dashboard'
 import { Home } from './pages/home/Home'
+import { GlobalStyle } from './styles/global'
 
-function App() {  
+const App = () => {
   const [logged, setLogged] = useState(false)
-  const [statusPlaylist, setStatusPlaylist] = useState(false)
   return (
     <>
-      {(!logged) && (
+    <GlobalStyle/>
+      {(!logged) ? (
         <Home setLogged={setLogged}/>
-      )}
-      {(logged) && (
+      ) : (
         <Dashboard setLogged={setLogged} />
-      )}
+      )} 
     </>
   )
 }
