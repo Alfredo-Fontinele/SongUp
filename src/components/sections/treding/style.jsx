@@ -16,6 +16,7 @@ export const TredingList = styled.ul`
     justify-content: flex-start;
     align-items: flex-start;
     gap: 30px;
+    padding: 0 0 1rem;
     overflow-x: auto;
     height: 400px;
     width: 100%;
@@ -34,5 +35,18 @@ export const TredingList = styled.ul`
         
         flex-wrap: nowrap;
         
+    }
+`
+
+export const OptionsControl = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+
+    svg {
+        font-size: 45px;
+        cursor: pointer;
+        color: var(--classic);
     }
 `

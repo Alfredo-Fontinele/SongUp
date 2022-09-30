@@ -1,4 +1,5 @@
 import { CardTreding } from './cards_treding/CardTreding'
+import { MdNavigateNext, MdNavigateBefore } from 'react-icons/md'
 import * as S from './style'
 
 export const Treding = ({ section }) => {
@@ -19,6 +20,10 @@ export const Treding = ({ section }) => {
                         img={img}
                     />
                 ))}
+                <S.OptionsControl>
+                    <MdNavigateBefore/>
+                    <MdNavigateNext/>
+                </S.OptionsControl>
             </S.TredingList>
         </S.Treding>
     )
