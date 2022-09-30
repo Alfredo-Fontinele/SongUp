@@ -10,7 +10,7 @@ export const CardTreding = styled.li`
     align-items: center;
 
     @media only screen and (max-width: 880px) {
-        min-width: 400px;
+        min-width: 300px;
     }
 `
 
@@ -40,7 +40,8 @@ export const CardInfoArtist = styled.div`
 
     h4 {
         width: 100%;
-        max-width: 220px;
+        min-width: 90px;
+        max-width: 110px;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
