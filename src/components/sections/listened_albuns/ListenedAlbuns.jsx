@@ -8,12 +8,13 @@ export const ListenedAlbuns = ({ section }) => {
                 <h3>Recently Listened Albuns</h3>
             </S.ListenedAlbunsTitle>
             <S.ListenedAlbunsList className={S.list__cards__album}>
-                {section.map(({ title_short, artist_name, img }) => (
+                {section.map(({ title_short, artist_name, picture_medium }) => (
                     <CardAlbum 
+                        id={crypto.randomUUID()}
                         key={crypto.randomUUID()}
                         artist_name={artist_name} 
                         title_short={title_short}
-                        img={img}
+                        img={picture_medium}
                     />
                 ))}
             </S.ListenedAlbunsList>

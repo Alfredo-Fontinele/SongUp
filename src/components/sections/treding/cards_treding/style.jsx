@@ -8,6 +8,10 @@ export const CardTreding = styled.li`
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media only screen and (max-width: 880px) {
+        min-width: 400px;
+    }
 `
 
 export const CardTredingDescription = styled.div`
@@ -35,11 +39,18 @@ export const CardInfoArtist = styled.div`
     gap: 10px;
 
     h4 {
-        max-width: 270px;
+        width: 100%;
+        max-width: 220px;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
         color: var(--classic);
+    }
+
+    p {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 `
 
@@ -51,5 +62,15 @@ export const CardTredingAudio = styled.div`
 
     svg {
         color: var(--classic);
+        cursor: pointer;
+    }
+
+    @media only screen and (max-width: 880px) {
+        flex-direction: column;
+        justify-content: space-between;
+        
+        audio {
+            display: none;
+        }
     }
 `

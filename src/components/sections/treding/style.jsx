@@ -28,13 +28,11 @@ export const TredingList = styled.ul`
     }
 
     ::-webkit-scrollbar-thumb {
-        background-color: var(--primary);
+        background-color: var(--classic);
     }
 
     @media only screen and (max-width: 770px) {
-        
         flex-wrap: nowrap;
-        
     }
 `
 

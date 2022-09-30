@@ -5,12 +5,13 @@ import { GiHamburgerMenu } from 'react-icons/gi'
 import { useState } from 'react'
 import { API } from '../../../services/Api'
 
-export const Search = ({ setStatusPlaylist, setListenedAlbuns }) => {
+export const Search = ({ setStatusPlaylist, setListenedAlbuns, setTreding }) => {
     const [valueSearch, setValueSearch] = useState("")
 
     const pesquisar = async () => {
-        const listenedNew = await API.resDataByListenedAlbuns(valueSearch)
-        setListenedAlbuns(listenedNew)
+        const informations = await API.resDataByListenedAlbuns(valueSearch)
+        setTreding(informations)
+        setListenedAlbuns(informations)
         setValueSearch("")
     }   
 

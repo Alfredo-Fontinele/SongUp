@@ -26,7 +26,8 @@
 /* Playlist */
 
 .playlist {
-    position: absolute;
+    position: fixed;
+    top: 0;
     right: 0;
     transition: all 1s;
     display: flex;

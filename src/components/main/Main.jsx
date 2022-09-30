@@ -5,61 +5,52 @@ import { ListenedAlbuns } from '../sections/listened_albuns/ListenedAlbuns'
 import { Treding } from '../sections/treding/Treding'
 import { useState, useEffect } from 'react'
 import { API } from '../../services/Api'
+import { FavoriteEmpty } from '../sections/favorites/favorite_empty'
+import { Loading } from '../../animations/loading/'
 
 export const Main = ({ setStatusPlaylist }) => {
-    
+    const [loading, setLoading] = useState(true)
     const [userSearch, setUserSearch] = useState([])
     const [listenedAlbuns, setListenedAlbuns] = useState([])
     const [treding, setTreding] = useState([])
+    const [favorites, setFavorites] = useState([])
 
     useEffect(() => {
         const requisition = async() => {
-            const data = await API.reqAPI('eminem')
-            const dados = []
-            data.forEach(obj => {
-                const { title_short, duration, artist: { name, picture_medium} } = obj
-                const info = {
-                    title_short: title_short,
-                    duration: duration,
-                    artist_name: name,
-                    img: picture_medium
-                }
-                dados.push(info)
-            })
-            setListenedAlbuns(dados)
+            const dataListenedAlbum = await API.reqAPI('eminem')
+            const dataTreding = await API.reqAPI('justin bieber')
+            const infoListenedAlbum = API.getDataByAPI(dataListenedAlbum)
+            const infoTreding = API.getDataByAPI(dataTreding)
+            setListenedAlbuns(infoListenedAlbum)
+            setTreding(infoTreding)
         }
         requisition()
     }, [])
 
     useEffect(() => {
-        const requisition = async() => {
-            const data = await API.reqAPI('justin bieber')
-            const dados = []
-            data.forEach(obj => {
-                const { title_short, duration, preview, artist: { name, picture_small} } = obj
-                const info = {
-                    title_short: title_short,
-                    duration: duration,
-                    artist_name: name,
-                    preview: preview,
-                    img: picture_small
-                }
-                dados.push(info)
-            })
-            setTreding(dados)
-        }
-        requisition()
-    }, [])
+        console.log(favorites)
+    }, [favorites])
 
     return (
         <S.Main>
-            <Search 
+            <Search
                 setStatusPlaylist={setStatusPlaylist}
                 setListenedAlbuns={setListenedAlbuns}
+                setTreding={setTreding}
             />
-            <ListenedAlbuns section={listenedAlbuns}/>
-            <Treding section={treding}/>
-            <Favorites/>
+            {(listenedAlbuns.length < 1) ? (
+                <Loading/>
+            ) : (
+                <>
+                    <ListenedAlbuns section={listenedAlbuns}/>
+                    <Treding section={treding} favorites={favorites} setFavorites={setFavorites}/>
+                    {(favorites.length === 0) ? (
+                        <FavoriteEmpty/>
+                    ) : (
+                        <Favorites favorites={favorites}/>
+                    )}
+                </>
+            )}
         </S.Main>
     )
 }
