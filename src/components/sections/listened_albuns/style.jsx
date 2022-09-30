@@ -1,38 +1,34 @@
 import styled from "styled-components";
 
-export const Treding = styled.div`
+export const ListenedAlbuns = styled.div`
     display: flex;
     flex-direction: column;
     gap: 20px;
+`
 
+export const ListenedAlbunsTitle = styled.div`
     h3 {
+        font-weight: 500;
         color: var(--primary);
     }
 `
 
-export const TredingList = styled.ul`
+export const ListenedAlbunsList = styled.div`
     display: flex;
-    flex-direction: column;
     justify-content: flex-start;
-    align-items: flex-start;
-    gap: 30px;
+    align-items: center;
+    gap: 20px;
     overflow-x: auto;
-    height: 400px;
     width: 100%;
     max-width: 1000px;
+    padding: 0 0 1rem;
 
     ::-webkit-scrollbar {
         background-color: transparent;
-        width: 10px;
+        height: 12px;
     }
 
     ::-webkit-scrollbar-thumb {
         background-color: var(--primary);
-    }
-
-    @media only screen and (max-width: 770px) {
-        
-        flex-wrap: nowrap;
-        
     }
 `

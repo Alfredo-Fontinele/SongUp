@@ -1,13 +1,13 @@
-import * as S from "./ListenedAlbuns.module.css"
+import * as S from "./style"
 import { CardAlbum } from './cards_album/Card_Album'
 
 export const ListenedAlbuns = ({ section }) => {
     return (
-        <div className={S.container}>
-            <div className={S.container__title}>
+        <S.ListenedAlbuns>
+            <S.ListenedAlbunsTitle>
                 <h3>Recently Listened Albuns</h3>
-            </div>
-            <ul className={S.list__cards__album}>
+            </S.ListenedAlbunsTitle>
+            <S.ListenedAlbunsList className={S.list__cards__album}>
                 {section.map(({ title_short, artist_name, img }) => (
                     <CardAlbum 
                         key={crypto.randomUUID()}
@@ -16,7 +16,7 @@ export const ListenedAlbuns = ({ section }) => {
                         img={img}
                     />
                 ))}
-            </ul>
-        </div>
+            </S.ListenedAlbunsList>
+        </S.ListenedAlbuns>
     )
 }

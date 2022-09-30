@@ -36,12 +36,13 @@ export const Main = ({ setStatusPlaylist }) => {
             const data = await API.reqAPI('justin bieber')
             const dados = []
             data.forEach(obj => {
-                const { title_short, duration, artist: { name, picture_medium} } = obj
+                const { title_short, duration, preview, artist: { name, picture_small} } = obj
                 const info = {
                     title_short: title_short,
                     duration: duration,
                     artist_name: name,
-                    img: picture_medium
+                    preview: preview,
+                    img: picture_small
                 }
                 dados.push(info)
             })

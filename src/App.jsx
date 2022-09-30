@@ -12,7 +12,7 @@ const App = () => {
         <Home setLogged={setLogged}/>
       ) : (
         <Dashboard setLogged={setLogged} />
-      )} 
+      )}
     </>
   )
 }

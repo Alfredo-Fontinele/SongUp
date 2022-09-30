@@ -1,15 +1,18 @@
 import { AXIOS } from "./Axios"
 
 export const API = {
+
     async reqAPI (valueSearch){
         const json = await AXIOS.get("/search", {
                 params: { q: valueSearch },
             })
         const { data: { data: listMusic } } = json
+        console.log(listMusic)
+
         return listMusic
     },
 
-    async resDataBySearch(search) {
+    async resDataByListenedAlbuns(search) {
         const informations = []
         const data = await this.reqAPI(search)
         data.forEach(obj => {

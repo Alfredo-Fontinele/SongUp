@@ -9,7 +9,7 @@ export const Search = ({ setStatusPlaylist, setListenedAlbuns }) => {
     const [valueSearch, setValueSearch] = useState("")
 
     const pesquisar = async () => {
-        const listenedNew = await API.resDataBySearch(valueSearch)
+        const listenedNew = await API.resDataByListenedAlbuns(valueSearch)
         setListenedAlbuns(listenedNew)
         setValueSearch("")
     }   
