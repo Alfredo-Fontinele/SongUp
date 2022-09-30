@@ -10,8 +10,8 @@ export const API = {
     },
 
     async resDataBySearch(search) {
+        const informations = []
         const data = await this.reqAPI(search)
-        const dados = []
         data.forEach(obj => {
             const { title_short, duration, artist: { name, picture_medium} } = obj
             const info = {
@@ -20,8 +20,8 @@ export const API = {
                 artist_name: name,
                 img: picture_medium
             }
-            dados.push(info)
+            informations.push(info)
         })
-        return dados
+        return informations
     }
 }

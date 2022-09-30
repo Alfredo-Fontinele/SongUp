@@ -32,7 +32,7 @@ export const Search = ({ setStatusPlaylist, setListenedAlbuns }) => {
             <S.Profile>
                 <FaBell/>
                 <img src="https://toppng.com/uploads/preview/instagram-default-profile-picture-11562973083brycehrmyv.png" alt="profile" />
-                <span>Alex Galileu Galilei</span>
+                <span>Neto_</span>
                 <FaAngleDown/>
                 <TbPlaylist className="btn__playlist" onClick={tooglePlaylist}/>
             </S.Profile>

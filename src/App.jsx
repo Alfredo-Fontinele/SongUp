@@ -7,7 +7,7 @@ const App = () => {
   const [logged, setLogged] = useState(false)
   return (
     <>
-    <GlobalStyle/>
+      <GlobalStyle/>
       {(!logged) ? (
         <Home setLogged={setLogged}/>
       ) : (

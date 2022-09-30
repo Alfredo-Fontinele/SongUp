@@ -23,6 +23,10 @@ export const CardDescription = styled.div`
     background-color: rgba(20,30,40,0.8);
 
     h4 {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        max-width: 140px;
         font-size: 15px;
     }
 

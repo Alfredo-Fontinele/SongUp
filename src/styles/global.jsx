@@ -20,4 +20,8 @@ export const GlobalStyle = createGlobalStyle`
     body {
         min-height: 100vh;
     }
+
+    button {
+        cursor: pointer;
+    }
 `

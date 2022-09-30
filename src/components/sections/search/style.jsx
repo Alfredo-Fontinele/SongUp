@@ -24,8 +24,8 @@ export const Camp__Search = styled.div`
 
     input {
         padding: 0 1.5rem 0 3.5rem;
-        flex: 1;
         height: inherit;
+        width: 100%;
         max-width: 800px;
         border-radius: 20px;
     }
@@ -41,7 +41,6 @@ export const Profile = styled.div`
     justify-content: flex-end;
     align-items: center;
     height: inherit;
-    /* width: 20%; */
     gap: 15px;
 
     svg:first-child {
@@ -63,7 +62,6 @@ export const Profile = styled.div`
     span {
         font-size: 11px;
         font-weight: 500;
-        /* max-width: 40px; */
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
