@@ -16,20 +16,15 @@ export const Main = ({ setStatusPlaylist }) => {
     const [favorites, setFavorites] = useState([])
 
     useEffect(() => {
-        const requisition = async() => {
+        (async() => {
             const dataListenedAlbum = await API.reqAPI('eminem')
             const dataTreding = await API.reqAPI('justin bieber')
             const infoListenedAlbum = API.getDataByAPI(dataListenedAlbum)
             const infoTreding = API.getDataByAPI(dataTreding)
             setListenedAlbuns(infoListenedAlbum)
             setTreding(infoTreding)
-        }
-        requisition()
+        })()
     }, [])
-
-    useEffect(() => {
-        console.log(favorites)
-    }, [favorites])
 
     return (
         <S.Main>

@@ -8,6 +8,12 @@ export const CardTreding = styled.li`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: all 0.5s;
+
+    &:hover {
+        transform: scale(1.001);
+        cursor: pointer;
+    }
 
     @media only screen and (max-width: 880px) {
         min-width: 300px;
@@ -40,11 +46,6 @@ export const CardInfoArtist = styled.div`
 
     h4 {
         width: 100%;
-        min-width: 90px;
-        max-width: 110px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
         color: var(--classic);
     }
 

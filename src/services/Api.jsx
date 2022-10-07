@@ -10,8 +10,7 @@ export const API = {
     },
 
     getDataByAPI(data) {
-        const informations = []
-        data.forEach(obj => {
+        const informations = data.map(obj => {
             const { title_short, duration, preview, artist: { name, picture_small, picture_medium } } = obj
             const info = {
                 id: crypto.randomUUID(),
@@ -22,7 +21,7 @@ export const API = {
                 picture_small: picture_small,
                 picture_medium: picture_medium
             }
-            informations.push(info)
+            return info
         })
         return informations
     },

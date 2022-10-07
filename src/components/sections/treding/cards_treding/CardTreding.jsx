@@ -1,23 +1,31 @@
+import { toast } from 'react-toastify'
 import * as S from './style'
-import { FaMusic ,FaHeart } from 'react-icons/fa'
 
-export const CardTreding = ({ count, id, index, title_short, artist_name, duration, preview, picture_small, picture_medium, treding, favorites, setFavorites }) => {
+export const CardTreding = ({ count, id, title_short, artist_name, duration, preview, picture_small, picture_medium, favorites, treding, setCardCurrent }) => {
 
-    const addFavorite = (id) => {
-        const validation = favorites.some((favorite) => favorite.id === id)
-        if (!validation) {
+    const validation = (arr, id) => {
+        return arr.some((arr) => arr.id === id)
+    }
+
+    const modalMusic = () => {
+        const result = validation(favorites, id)
+        if (!result) {
             const info = {
                 id: id,
+                count: count,
                 img: picture_medium,
+                preview: preview,
                 title_short: title_short,
                 artist_name: artist_name
             }
-            setFavorites((previous) => [...previous, info])
+            setCardCurrent(info)
+        } else {
+            toast.error("Musica já foi adicionada aos favoritos")
         }
     }
 
     return (
-        <S.CardTreding>
+        <S.CardTreding onClick={() => modalMusic()}>
             <S.CardTredingDescription>
                 <p>{count}</p>
                 <S.CardInfo>
@@ -28,11 +36,10 @@ export const CardTreding = ({ count, id, index, title_short, artist_name, durati
                     </S.CardInfoArtist>
                 </S.CardInfo>
             </S.CardTredingDescription>
-            <S.CardTredingAudio>
+            {/* <S.CardTredingAudio>
                 <audio src={preview} controls></audio>
-                <FaMusic/>
-                <FaHeart onClick={() => addFavorite(id)} title="Adicionar aos Favoritos"/>
-            </S.CardTredingAudio>
+                <FaMusic />
+            </S.CardTredingAudio> */}
         </S.CardTreding>
     )
 }

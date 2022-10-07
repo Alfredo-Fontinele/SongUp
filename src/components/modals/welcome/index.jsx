@@ -1,4 +1,4 @@
-import { openWelcome } from "../../../animations/modal/style"
+import { openModal } from "../../../animations/modal/style"
 import { ModalStructure } from "../layout"
 import * as S from './style'
 
@@ -8,7 +8,7 @@ export const ModalWelcome = ({ setStatusModalWelcome }) => {
     }
     return (
         <ModalStructure>
-            <S.Welcome animation={openWelcome}>
+            <S.Welcome animation={openModal}>
                 <h1>Bem-Vindo</h1>
                 <button onClick={closeModal}>Go</button>
             </S.Welcome>            

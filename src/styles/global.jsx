@@ -1,12 +1,12 @@
 import { createGlobalStyle } from 'styled-components' 
 
 export const GlobalStyle = createGlobalStyle`
-
     :root {
         --primary: rgb(127, 146, 255);
         --classic: mediumspringgreen;
         --grey-1: #ddd;
         --white: #fff;
+        --crimson: crimson;
     }
 
     * {
@@ -24,7 +24,7 @@ export const GlobalStyle = createGlobalStyle`
         min-height: 100vh;
     }
 
-    button {
+    button, svg {
         cursor: pointer;
     }
 

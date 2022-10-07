@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { ToastControl } from './components/toast_container'
 import { Dashboard } from './pages/dashboard/Dashboard'
 import { Home } from './pages/home/Home'
 import { GlobalStyle } from './styles/global'
@@ -8,6 +9,7 @@ const App = () => {
   return (
     <>
       <GlobalStyle/>
+      <ToastControl/>
       {(!logged) ? (
         <Home setLogged={setLogged}/>
       ) : (

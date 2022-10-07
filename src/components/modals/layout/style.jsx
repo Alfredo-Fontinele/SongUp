@@ -4,6 +4,7 @@ export const ModalContainer = styled.section`
     position: fixed;
     top: 0;
     left: 0;
+    padding: 0 1rem;
     width: 100%;
     height: 100vh;
     display: flex;
