@@ -10,7 +10,7 @@ export const ModalMusic = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 3.5rem 2rem;
+    padding: 3.5rem 1rem;
     gap: 30px;
     border-radius: 8px;
     background-color: rgb(40,50,60);
@@ -61,5 +61,10 @@ export const ModalMusic = styled.div`
     div p {
         color: var(--grey-1);
         text-align: center;
+    }
+
+    audio {
+        width: 100%;
+        max-width: 300px;
     }
 `
